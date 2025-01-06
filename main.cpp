@@ -131,11 +131,12 @@ int findProcess(const char *processName) {
 }
 
 int main(int argc, char* argv[]) {
+    const char *targetName;
     if (argc == 1) {
-        printf("You must provide a valid process name!\n");
-        exit(1);
+        targetName = "explorer.exe";
+    } else {
+        targetName = argv[1];
     }
-    const char *targetName = argv[1];
     printf("Starting autoLocker...\n");
     printf("Target: %s\n", targetName);
 
